@@ -19,8 +19,6 @@ res.txt accumulates a line for each; then run --do_predict on the best one):
 import argparse
 import os
 
-# Avoid NaN losses on Apple Silicon if a torch op isn't yet implemented for MPS.
-# Must be set BEFORE torch is imported (transformers imports torch transitively).
 os.environ.setdefault("PYTORCH_ENABLE_MPS_FALLBACK", "1")
 
 import numpy as np
